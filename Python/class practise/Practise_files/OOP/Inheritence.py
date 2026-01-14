@@ -35,3 +35,36 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# 2.py# Base class
+
+class Person():
+
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    
+class Student(Person):
+    def __init__(self, name, age, student_id ,address):
+        super().__init__(name, age)
+        self.student_id=student_id
+        self.address=address
+    def display_details(self):
+        print(f"Student Details:")
+        print(f"Name: {self.name}, Age: {self.age}, Student ID: {self.student_id}, Address: {self.address}")
+
+class Teacher(Person):
+    def __init__(self, name, age , subject ,salary):
+        super().__init__(name, age)
+        self.subject=subject
+        self.salary=salary
+    def display_details(self):
+        print(f"Teacher Details:")
+        print(f"Name: {self.name}, Age: {self.age}, Subject: {self.subject}, Salary: {self.salary}")
+
+if __name__ == "__main__":
+    Student1 = Student("Alice", 20, "S123", "123 Main St")
+    Teacher1 = Teacher("Mr. Smith", 40, "Mathematics", 50000)
+
+Student1.display_details()
+Teacher1.display_details()
